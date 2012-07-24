@@ -3,7 +3,7 @@ Contributors: Gustave F. Gerhardt, Daniel J. Rivera
 Tags: jquery, tabs, ui, navigation, shortcode
 Requires at least: 3.1
 Tested up to: 3.4
-Stable tag: 2.1.12
+Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: FancyTabs
-Plugin URI: http://morningstarmediagroup.com
+Plugin URI: https://github.com/GhostToast/FancyTabs
 Description: Shortcode driven in-page jQuery tab navigation
 Version: 1.01
 Author: Gustave F. Gerhardt
