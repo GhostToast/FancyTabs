@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* =FancyTabs
+-------------------------------------------------------------- */
+#fancy-tabs {
+	display: block;
+	height:49px;
+	border-bottom: #CCC solid 2px;
+}
+#fancy-tabs ul {
+	text-align:center;
+	list-style:none;
+	padding: 0;
+	margin: 0;
+}
+#fancy-tabs ul li{
+	padding: 0;
+	margin: 0;
+	display:inline-block;
+}
+#fancy-tabs ul li a {
+	display:block;
+	cursor: pointer;
+	text-decoration:none;
+	padding: 5px 25px;
+	margin:15px 5px;
+	color:#222;
+	font-size:14px;
+	text-transform:uppercase;	
+	background:#DDD;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+}
+#fancy-tabs ul li a:hover {
+	color: #FFF;
+	background:#F1AA3F !important;
+}
+
