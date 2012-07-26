@@ -3,7 +3,7 @@
 Plugin Name: FancyTabs
 Plugin URI: https://github.com/GhostToast/FancyTabs
 Description: Shortcode driven in-page jQuery tab navigation
-Version: 1.01
+Version: 1.0.2
 Author: Gustave F. Gerhardt
 Author URI: http://www.morningstarmediagroup.com
 */
@@ -30,7 +30,7 @@ function fancytabs_group( $atts, $content ){
 	
 	if( is_array( $GLOBALS['tabs'] ) ){
 		$int = 1;
-		$color_on = '#F1AA3F';
+		$color_on = '#AAA';
 		$color_off = '#DDD';
 		foreach( $GLOBALS['tabs'] as $tab ){
 			$code[] = '$("#tabs-link-'.$int.'").click (function (event) {

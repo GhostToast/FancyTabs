@@ -1,5 +1,6 @@
 === FancyTabs ===
-Contributors: Gustave F. Gerhardt, Daniel J. Rivera
+Contributors: GhostToast, Dan Rivera
+Donate link: http://goo.gl/c9EFh
 Tags: jquery, tabs, ui, navigation, shortcode
 Requires at least: 3.1
 Tested up to: 3.4
@@ -14,16 +15,15 @@ Shortcode tab navigation
 Create navigable tabs to hide/show in-page content.
 Use the following shortcode:
 
-[fancytabs]
+`[fancytabs]
 [tab title="Title 1"]
 Hello world
 [/tab]
 [tab title="Title 2"]
 Hello again, world
 [/tab]
-[/fancytabs]
+[/fancytabs]`
 
-Requires jQuery - not included in this installation!
 
 == Installation ==
 
@@ -34,6 +34,24 @@ Requires jQuery - not included in this installation!
 == Frequently Asked Questions ==
 None yet!
 
+== Screenshots ==
+
+1. This screen shot shows the basic shortcode usage within the editor. Notice the attribute "title" is important.
+2. This shot shows the end result
+3. This shot also shows the end result
+
 == Changelog ==
+= 1.0.2 =
+* Improve appearance (CSS)
+
+= 1.0.1 =
+* Added screenshots
+
 = 1.0 =
 * Initial release
+
+== Upgrade Notice ==
+Initial version
+
+== Coming Soon ==
+* Options page for setting colors/styles
