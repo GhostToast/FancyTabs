@@ -12,15 +12,15 @@ function fancytabs_scripts() {
 	if(!is_admin()){
 		
 		if ( file_exists( get_stylesheet_directory()."/fancytabs.css" ) ) {
-			wp_enqueue_style( 'ancy-Tabs-Styles', get_stylesheet_directory_uri() . '/fancytabs.css', array(), '1.0' );
+			wp_enqueue_style( 'Fancy-Tabs-Styles', get_stylesheet_directory_uri() . '/fancytabs.css', array(), '1.0' );
 		}
 	
 		elseif ( file_exists( get_template_directory()."/fancytabs.css" ) ) {
-			wp_enqueue_style( 'ancy-Tabs-Styles', get_template_directory_uri() . '/fancytabs.css', array(), '1.0' );
+			wp_enqueue_style( 'Fancy-Tabs-Styles', get_template_directory_uri() . '/fancytabs.css', array(), '1.0' );
 		}
 	
 		else {
-			wp_enqueue_style( 'ancy-Tabs-Styles', plugins_url('/fancytabs.css', __FILE__), array(), '1.0' );
+			wp_enqueue_style( 'Fancy-Tabs-Styles', plugins_url('/fancytabs.css', __FILE__), array(), '1.0' );
 		}
 
 		wp_register_script('fancy_tabs_js', plugin_dir_url(__FILE__).'fancytabs.js', array( 'jquery' ));
