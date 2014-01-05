@@ -1,10 +1,9 @@
 === FancyTabs ===
 Contributors: GhostToast, Dan Rivera
-Donate link: http://goo.gl/c9EFh
 Tags: jquery, tabs, ui, navigation, shortcode
-Requires at least: 3.1
-Tested up to: 3.4
-Stable tag: 1.0
+Requires at least: 3.5.1
+Tested up to: 3.8
+Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +23,8 @@ Hello again, world
 [/tab]
 [/fancytabs]`
 
+If you wish to make adjustments to the styles, you can copy the `fancytabs.css` from the plugin directory and add it to your theme folder.
+
 
 == Installation ==
 
@@ -41,6 +42,11 @@ None yet!
 3. This shot also shows the end result
 
 == Changelog ==
+= 1.1.0 =
+* Greatly cleanup jQuery, add to `fancytabs.js`
+* Styles now happen solely in `fancytab.css`
+* Ability for user to copy stylesheet to theme/stylesheet directory for customization
+
 = 1.0.2 =
 * Improve appearance (CSS)
 
