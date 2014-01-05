@@ -44,7 +44,7 @@ None yet!
 == Changelog ==
 = 1.1.0 =
 * Greatly cleanup jQuery, add to `fancytabs.js`
-* Styles now happen solely in `fancytab.css`
+* Styles now happen solely in `fancytabs.css`
 * Ability for user to copy stylesheet to theme/stylesheet directory for customization
 
 = 1.0.2 =
