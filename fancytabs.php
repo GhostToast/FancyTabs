@@ -3,22 +3,29 @@
 Plugin Name: FancyTabs
 Plugin URI: https://github.com/GhostToast/FancyTabs
 Description: Shortcode driven in-page jQuery tab navigation
-Version: 1.0.2
+Version: 1.1.0
 Author: Gustave F. Gerhardt
-Author URI: http://www.morningstarmediagroup.com
+Author URI: http://ghosttoa.st
 */
 
-function fancytabs_styles() {
-        if ( is_readable( plugin_dir_path( __FILE__ ) . 'fancytabs.css' ) ) {
-            wp_enqueue_style( 'Fancy-Tabs-Styles', plugin_dir_url( __FILE__ ) . 'fancytabs.css', array(), '0.1', 'screen' );
-        }
-}
-add_action( 'wp_enqueue_scripts', 'fancytabs_styles' );
-
 function fancytabs_scripts() {
-	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js');
-	wp_enqueue_script( 'jquery' );
+	if(!is_admin()){
+		
+		if ( file_exists( get_stylesheet_directory()."/fancytabs.css" ) ) {
+			wp_enqueue_style( 'ancy-Tabs-Styles', get_stylesheet_directory_uri() . '/fancytabs.css', array(), '1.0' );
+		}
+	
+		elseif ( file_exists( get_template_directory()."/fancytabs.css" ) ) {
+			wp_enqueue_style( 'ancy-Tabs-Styles', get_template_directory_uri() . '/fancytabs.css', array(), '1.0' );
+		}
+	
+		else {
+			wp_enqueue_style( 'ancy-Tabs-Styles', plugins_url('/fancytabs.css', __FILE__), array(), '1.0' );
+		}
+
+		wp_register_script('fancy_tabs_js', plugin_dir_url(__FILE__).'fancytabs.js', array( 'jquery' ));
+		wp_enqueue_script('fancy_tabs_js');
+	}
 }
 add_action('wp_enqueue_scripts', 'fancytabs_scripts');
 
@@ -29,33 +36,16 @@ function fancytabs_group( $atts, $content ){
 	do_shortcode( $content );
 	
 	if( is_array( $GLOBALS['tabs'] ) ){
-		$int = 1;
-		$color_on = '#AAA';
-		$color_off = '#DDD';
+		$i = 1;
 		foreach( $GLOBALS['tabs'] as $tab ){
-			$code[] = '$("#tabs-link-'.$int.'").click (function (event) {
-							$(".link-catch-all").css("background-color", "'.$color_off.'");
-							$("#tabs-link-'.$int.'").css("background-color", "'.$color_on.'");
-							$(".tabs-catch-all").hide();
-							$("#tabs-'.$int.'").show();
-			});';
-			$tabs[] = '<li><a class="link-catch-all" id="tabs-link-'.$int.'">'.$tab['title'].'</a></li>';
-			$panes[] = '<div id="tabs-'.$int.'" class="tabs-catch-all">'.$tab['content'].'</div>'."\n";
-			$int++;
+			$tabs[] = '<li><a class="link-catch-all" data-counter="'.$i.'">'.$tab['title'].'</a></li>';
+			$panes[] = '<div data-counter="'.$i.'" class="tabs-catch-all">'.$tab['content'].'</div>'."\n";
+			$i++;
 		}
-		$return = 	'<script type ="text/javascript">
-						$(document).ready(function() {
-							$(".link-catch-all").css("background-color", "'.$color_off.'");
-							$("#tabs-link-1").css("background-color", "'.$color_on.'");
-							$(".tabs-catch-all").hide();
-							$("#tabs-1").show();
-							'.implode( "\n", $code ).'
-						});
-					</script>
-					<div id="fancy-tabs">
-						<ul class="tabs">'.implode( "\n", $tabs ).'</ul>
-					</div>'."\n"
-					.implode( "\n", $panes );
+		$return  = '<div id="fancy-tabs">';
+		$return .= '<ul class="tabs">'.implode( "\n", $tabs ).'</ul>';
+		$return .= '</div>';
+		$return .= implode( "\n", $panes );
 	}
 	return $return;
 }
