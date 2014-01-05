@@ -4,13 +4,7 @@
 #fancy-tabs {
 	display: block;
 	line-height: 22px;
-	background: #D8D8D8;
-	padding: 5px 10px 3px 10px;
-	border-bottom: #999 1px solid;	
-	border-top-right-radius: 8px;
-	border-top-left-radius: 8px;
-	-moz-border-radius-topleft: 8px;
-	-moz-border-radius-topright: 8px;
+	padding: 5px 10px 3px 0;
 }
 #fancy-tabs ul {
 	text-align: left;
@@ -39,7 +33,14 @@
 	-moz-border-radius: 8px;
 	-moz-border-radius: 8px;
 }
+#fancy-tabs ul li a.link-catch-all {
+	background:#ddd;
+}
+#fancy-tabs ul li a.fancytab_on {
+	color:#fff;
+	background:#333;
+}
 #fancy-tabs ul li a:hover {	
 	color: #FFF;
-	background: #333 !important;
+	background: #333;
 }
